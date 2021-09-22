@@ -53,7 +53,9 @@ public class SplashScreen extends AppCompatActivity {
 
                 if(mCurrentUser==null){
 
-
+                    Intent intent = new Intent(SplashScreen.this, Login.class);
+                    startActivity(intent);
+                    finish();
 
                 }else{
 
@@ -65,7 +67,9 @@ public class SplashScreen extends AppCompatActivity {
                                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                     @Override
                                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-
+                                        Intent intent = new Intent(SplashScreen.this, ProfileSetup.class);
+                                        startActivity(intent);
+                                        finish();
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
@@ -93,11 +97,15 @@ public class SplashScreen extends AppCompatActivity {
 
                         if(TextUtils.isEmpty(nam)){
 
-
+                            Intent intent = new Intent(SplashScreen.this, ProfileSetup.class);
+                            startActivity(intent);
+                            finish();
 
                         }else{
 
-
+                            Intent intent = new Intent(SplashScreen.this, Dashboard.class);
+                            startActivity(intent);
+                            finish();
 
                         }
 
@@ -106,7 +114,6 @@ public class SplashScreen extends AppCompatActivity {
 
             }
         }, 1000);
-
 
     }
 }
